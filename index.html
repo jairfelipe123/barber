@@ -148,6 +148,27 @@
       transition: background-color 0.3s;
     }
 
+    body {
+  background: var(--dark);
+  color: var(--white);
+  padding-bottom: 60px; /* espacio para el nav fijo abajo */
+}
+
+nav {
+  background: var(--dark);
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+  border-top: 2px solid var(--gold);
+}
+
+
     .whatsapp-btn:hover {
       background-color: #1ebe5a;
     }
@@ -180,17 +201,17 @@
   <nav>
     <a onclick="mostrarSeccion('horarios')">Horarios</a>
     <a onclick="mostrarSeccion('planes')">Planes</a>
-    <a onclick="mostrarSeccion('minijuego')">Minijuego</a>
+    <a onclick="mostrarSeccion('minijuego')">Minijuegos</a>
   </nav>
 
   <section id="horarios" class="section horarios active">
-    <h2>Configura tu horario (Lunes a Sábado)</h2>
+    <h2>Configura tu horario</h2> <h5>Solo Lunes a Sabado</h5>
     <label for="hora">Selecciona una hora:</label>
     <input type="time" id="hora" name="hora" min="08:00" max="20:00">
   </section>
 
   <section id="planes" class="section">
-    <h2>Planes de Servicio</h2>
+    <h2>Planes</h2><br><br>
     <div class="planes">
       <div class="plan">
         <h3>Barbero1</h3>
@@ -213,21 +234,14 @@
   <section id="minijuego" class="section minijuego">
     <h2>Adivina el número</h2>
     <p>Gana 5 veces para conseguir un corte GRATIS</p>
+    <h5>⚠️Si ganaste las 5 veces, toma captura de pantalla⚠️</h5>
     <p id="mensaje"></p>
     <input type="number" id="adivina" min="1" max="9" placeholder="numeros del 1 al 9" oninput="this.value=this.value.slice(0,1)">
-
     <button class="juego-btn" onclick="jugarJuego()">Jugar</button>
-    <p>Victorias: <span id="victorias">0</span></p>
+    <p>Victorias: <span id="victorias">0</span></p><br><br><br><br><br>
+    <h1>Muchos mas Proximamente</h1>
   </section>
-<footer style="background: #1a1a1a; padding: 30px; text-align: center; color: var(--white);">
-  <h2>Sobre la Barbería</h2>
-  <p>siguenos en nuestras redes sociales</p>
-  <div style="margin-top: 15px;">
-    <a href="#" target="_blank" style="margin: 0 10px; color: var(--gold); text-decoration: none;">Instagram</a>
-    <a href="#" target="_blank" style="margin: 0 10px; color: var(--gold); text-decoration: none;">Facebook</a>
-    <a href="#" target="_blank" style="margin: 0 10px; color: var(--gold); text-decoration: none;">Whatsapp</a>
-  </div>
-</footer>
+
 
   <script>
     let victorias = 0;
