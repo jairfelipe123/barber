@@ -1,18 +1,268 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Iniciar Sesión</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barbería S20-4</title>
+  <style>
+    :root {
+      --gold: #bfa046;
+      --dark: #121212;
+      --gray: #2c2c2c;
+      --white: #f5f5f5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    header {
+      background: var(--gray);
+      padding: 20px;
+      text-align: center;
+      animation: fadeIn 1s ease;
+    }
+
+    header h1 {
+      color: var(--gold);
+      font-size: 2em;
+    }
+
+    nav {
+      background: var(--dark);
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9em;
+      transition: color 0.3s;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .section {
+      display: none;
+      padding: 20px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .planes {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .plan {
+      background: var(--gray);
+      border: 2px solid var(--gold);
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 300px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .plan:hover {
+      transform: translateY(-10px);
+    }
+
+    .plan h3 {
+      color: var(--gold);
+    }
+
+    .plan p {
+      margin: 10px 0;
+    }
+
+    .horarios input, .horarios label {
+      display: block;
+      margin: 10px auto;
+      text-align: center;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .minijuego {
+      text-align: center;
+    }
+
+    .minijuego input {
+      width: 80%;
+      max-width: 200px;
+      padding: 8px;
+      margin: 10px auto;
+    }
+
+    .juego-btn {
+      padding: 10px 20px;
+      background: var(--gold);
+      color: var(--dark);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .juego-btn:hover {
+      background: var(--white);
+    }
+
+    .contacto {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .whatsapp-btn {
+      background-color: #25d366;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+    }
+
+    .whatsapp-btn:hover {
+      background-color: #1ebe5a;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (min-width: 600px) {
+      .planes {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 <body>
-    
-    <form action="login.php" method="POST">
-        <h2>Inicia Sesion</h2>
-        <input type="email" name="correo" placeholder="Correo" required><br>
-        <input type="password" name="contraseña" placeholder="Clave" required><br>
-        <button type="submit">Entrar</button><br><br> 
-        <h6>¿no te has registrado? <a href="register.html">registrate aqui</a></h6>
-    </form>
-    
+  <header>
+    <h1>Barbería S20-4</h1>
+  </header>
+
+  <nav>
+    <a onclick="mostrarSeccion('horarios')">Horarios</a>
+    <a onclick="mostrarSeccion('planes')">Planes</a>
+    <a onclick="mostrarSeccion('minijuego')">Minijuego</a>
+  </nav>
+
+  <section id="horarios" class="section horarios active">
+    <h2>Configura tu horario (Lunes a Sábado)</h2>
+    <label for="hora">Selecciona una hora:</label>
+    <input type="time" id="hora" name="hora" min="08:00" max="20:00">
+  </section>
+
+  <section id="planes" class="section">
+    <h2>Planes de Servicio</h2>
+    <div class="planes">
+      <div class="plan">
+        <h3>Barbero1</h3>
+        <p>Corte clásico + barba</p>
+        <p><strong>$25.000 COP</strong></p>
+      </div>
+      <div class="plan">
+        <h3>Barbero2</h3>
+        <p>Corte + barba + cejas</p>
+        <p><strong>$30.000 COP</strong></p>
+      </div>
+      <div class="plan">
+        <h3>Barbero3</h3>
+        <p>Full estilo: Corte, barba, facial</p>
+        <p><strong>$40.000 COP</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="minijuego" class="section minijuego">
+    <h2>Adivina el número</h2>
+    <p>Gana 5 veces para conseguir un corte GRATIS</p>
+    <p id="mensaje"></p>
+    <input type="number" id="adivina" min="1" max="9" placeholder="numeros del 1 al 9" oninput="this.value=this.value.slice(0,1)">
+
+    <button class="juego-btn" onclick="jugarJuego()">Jugar</button>
+    <p>Victorias: <span id="victorias">0</span></p>
+  </section>
+<footer style="background: #1a1a1a; padding: 30px; text-align: center; color: var(--white);">
+  <h2>Sobre la Barbería</h2>
+  <p>Puedes escribir aquí una breve descripción de tu negocio, experiencia o estilo.</p>
+  <div style="margin-top: 15px;">
+    <a href="#" target="_blank" style="margin: 0 10px; color: var(--gold); text-decoration: none;">Instagram</a>
+    <a href="#" target="_blank" style="margin: 0 10px; color: var(--gold); text-decoration: none;">Facebook</a>
+    <a href="#" target="_blank" style="margin: 0 10px; color: var(--gold); text-decoration: none;">Whatsapp</a>
+  </div>
+</footer>
+
+  <script>
+    let victorias = 0;
+function jugarJuego() {
+  const num = Math.floor(Math.random() * 9) + 1; // Solo números del 1 al 9
+  const input = document.getElementById("adivina");
+  const entrada = parseInt(input.value);
+  const mensaje = document.getElementById("mensaje");
+
+  if (entrada === num) {
+    victorias++;
+    mensaje.innerText = `¡Correcto! Era el ${num}`;
+  } else {
+    mensaje.innerText = `Fallaste. Era el ${num}`;
+  }
+
+  document.getElementById("victorias").innerText = victorias;
+
+  if (victorias >= 5) {
+    alert("¡Felicidades! Has ganado un corte de pelo gratis.");
+    victorias = 0;
+    document.getElementById("victorias").innerText = victorias;
+  }
+
+  // Limpiar el input después de jugar
+  input.value = "";
+}
+
+
+    function mostrarSeccion(id) {
+      document.querySelectorAll('.section').forEach(sec => {
+        sec.classList.remove('active');
+      });
+      document.getElementById(id)?.classList.add('active');
+    }
+  </script>
 </body>
 </html>
