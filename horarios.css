@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+}
+
+.navbar {
+  background: #1877f2;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+    position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 1000;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+  font-weight: bold;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  padding: 30px 15px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #333;
+  text-align: center;
+}
+
+.dia {
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.dia label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.dia input[type="time"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 5px;
+}
+
+.dia span {
+  margin: 5px 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.btn-guardar {
+  background-color: #1877f2;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-guardar:hover {
+  background-color: #0f5cc3;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .user-info {
+    margin-top: 10px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+}
+.horarios-guardados {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.horarios-guardados h3 {
+  margin-bottom: 10px;
+}
+.horarios-guardados ul {
+  list-style: none;
+  padding-left: 0;
+}
+.horarios-guardados li {
+  margin: 5px 0;
+  font-size: 16px;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 1000;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Asegúrate de que el contenido principal no quede detrás del header */
+.main-content {
+  padding-top: 100px;
+}
