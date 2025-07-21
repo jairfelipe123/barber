@@ -300,14 +300,14 @@ function enviarWhatsapp() {
   const horaFormateada = `${hora}:${minutos} ${ampm}`;
 
   const mensaje = `Hola, ¿estás disponible a esta hora?: ${horaFormateada}`;
-  const telefono = "573000000000"; // Reemplaza con tu número
+  const telefono = "573173064851"; // Reemplaza con tu número
   const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
   window.location.href = url; // ✅ Abre en la misma ventana
 }
 
 function enviarPlan(planNombre) {
   const mensaje = `Hola, estoy interesado en este plan: ${planNombre}`;
-  const telefono = "573000000000"; // Reemplaza con tu número
+  const telefono = "573173064851"; // Reemplaza con tu número
   const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
   window.location.href = url; // ✅ Abre en la misma ventana
 }
